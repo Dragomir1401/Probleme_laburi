@@ -1,0 +1,229 @@
+//PROBLEMA 1
+
+#include <stdio.h>
+#define NMAX 100
+void read_array(int v[], int n)
+{
+	for(int i=0; i<n; i++)
+		scanf("%d", &v[i]);
+
+}
+void print_array(int v[], int n)
+{
+	for(int i=0; i<n; i++)
+		printf("%d ", v[i]);
+	printf("\n");
+
+}
+int main()
+{
+	int n, v[NMAX];
+	scanf("%d", &n);
+	read_array(v,n);
+	print_array(v,n);
+	return 0;
+}
+
+//PROBLEMA 2
+
+#include <stdio.h>
+#define NMAX 100
+void read_array(int v[], int n)
+{
+	for(int i=0; i<n; i++)
+		scanf("%d", &v[i]);
+
+}
+void print_array(int v[], int n)
+{
+	for(int i=0; i<n; i++)
+		printf("%d ", v[i]);
+	printf("\n");
+
+}
+int sum_array(int v[], int n)
+{
+	int sum=0;
+	for(int i=0; i<n; i++)
+		sum+=v[i];
+
+	return sum;
+}
+int min_array(int v[], int n)
+{
+	int min=v[0];
+	for(int i=1; i<n; i++)
+		if(v[i]<min) min=v[i];
+
+	return min;
+}
+int posmax_array(int v[], int n)
+{
+	int max=v[0], pos;
+	for(int i=1; i<n; i++)
+		if(v[i]>max) 
+			{
+			max=v[i];
+			pos=i;
+			}
+
+	return pos;
+}
+double avg_array(int v[], int n)
+{
+	double avg= (double)sum_array(v, n) / n;
+	return avg;
+}
+int find_array(int v[], int n, int x)
+{
+	int pos=-1;
+	for(int i=0; i<n; i++)
+		{
+		if(v[i]==x)
+			{
+			pos=i;
+			return pos;
+			}
+		}
+	return pos;
+}
+int main()
+{
+	int n, v[NMAX], sum, min, posmax, pos;
+	double avg;
+	scanf("%d", &n);
+	read_array(v,n);
+	printf("\n");
+	
+	sum=sum_array(v,n);
+	printf("%d\n", sum);
+	printf("\n");
+
+	min=min_array(v,n);
+	printf("%d\n", min);
+	printf("\n");
+
+	posmax=posmax_array(v,n);
+	printf("%d\n", posmax);
+	printf("\n");
+
+	avg=avg_array(v, n);
+	printf("%.2lf\n", avg);
+	printf("\n");
+
+	pos=find_array(v, n, 2321);
+	printf("%d\n", pos);
+	printf("\n");
+	return 0;
+}
+
+
+//PROBLEMA 3
+
+
+#include <stdio.h>
+#define NMAX 100
+void read_array(int v[], int n)
+{
+	for(int i=0; i<n; i++)
+		scanf("%d", &v[i]);
+
+}
+void print_array(int v[], int n)
+{
+	for(int i=0; i<n; i++)
+		printf("%d ", v[i]);
+	printf("\n");
+
+}
+void sort_array(int v[], int n)
+{
+	for(int i=0; i<n-1; i++)
+		for(int j=i+1; j<n; j++)
+			if(v[i] > v[j])
+			{
+				v[i]=v[i]^v[j];
+				v[j]=v[i]^v[j];
+				v[i]=v[i]^v[j];
+
+			}
+
+}
+//sortare prin selectie to do
+int main()
+{
+	int n, v[NMAX];
+	scanf("%d", &n);
+
+	read_array(v, n);
+
+	sort_array(v, n);
+
+	print_array(v, n);
+	return 0;
+}
+
+
+//Problema4
+
+#include <stdio.h>
+#define NMAX 100
+void multiply_matrix(int n, int m, int p, int a[NMAX][NMAX], int b[NMAX][NMAX], int c[NMAX][NMAX]);
+void read_matrix(int n, int m, int a[NMAX][NMAX]);
+void print_matrix(int n, int m, int a[NMAX][NMAX]);
+
+int main()
+{
+	int a[NMAX][NMAX], b[NMAX][NMAX], c[NMAX][NMAX], n, m ,p;
+	scanf("%d%d%d", &n, &m, &p);
+
+	read_matrix(n, m, a);
+	read_matrix(m, p, b);
+	printf("\n");
+
+	multiply_matrix(n, m, p, a, b, c);
+	print_matrix(n, p, c);
+	return 0;
+}
+
+void read_matrix(int n, int m, int a[NMAX][NMAX])
+{
+	for(int i=0; i<n; i++)
+		for(int j=0; j<m; j++)
+			scanf("%d", &a[i][j]);
+
+}
+void print_matrix(int n, int m, int a[NMAX][NMAX])
+{
+	for(int i=0; i<n; i++)
+		{
+		for(int j=0; j<m; j++)
+			printf("%d ", a[i][j]);
+		printf("\n");
+		}
+
+}
+void multiply_matrix(int n, int m, int p, int a[NMAX][NMAX], int b[NMAX][NMAX], int c[NMAX][NMAX])
+{
+	for(int i=0; i<n; i++)
+		for(int j=0; j<p; j++)
+			c[i][j]=0;
+
+	for(int i=0; i<n; i++)
+		for(int j=0; j<p; j++)
+			for(int k=0; k<m; k++)
+				c[i][j]+= a[i][k] * b[k][j];
+
+}
+
+/*
+4 4 3
+0 1 1 1
+1 1 1 1
+0 10 0 0
+0 10 0 0
+-1 10 1 
+-2 20 2 
+-3 30 3 
+-4 40 4 
+*/

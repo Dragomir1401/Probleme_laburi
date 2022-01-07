@@ -1,0 +1,16 @@
+total 120
+drwxr-xr-x 5 darius darius  4096 Nov 19 00:48 .
+drwxr-xr-x 8 darius darius  4096 Nov 18 20:55 ..
+-rw-r--r-- 1 darius darius  1246 Nov 19 00:08 1-bin.c
+-rw-r--r-- 1 darius darius    12 Nov 19 00:22 1-gen.bin
+-rw-r--r-- 1 darius darius    13 Nov 18 23:37 1-gen.txt
+-rw-r--r-- 1 darius darius   755 Nov 19 00:08 1-text.c
+-rw-r--r-- 1 darius darius   517 Nov 19 00:22 2-bin.c
+-rw-r--r-- 1 darius darius    20 Nov 19 00:28 2-gen.bin
+-rw-r--r-- 1 darius darius    12 Nov 19 00:22 2-gen.txt
+-rw-r--r-- 1 darius darius   507 Nov 19 00:31 2-text.c
+-rw-r--r-- 1 darius darius   788 Nov 19 00:42 3-bin.c
+-rw-r--r-- 1 darius darius   822 Nov 19 00:35 3-text.c
+-rw-r--r-- 1 darius darius   484 Nov 19 00:48 4-sizeof_file.c
+-rwxr-xr-x 1 darius darius 16888 Nov 19 00:48 a.out
+-rwxr-xr-x 1 darius darius 16888 Nov 19 00:48 sizeof_file
